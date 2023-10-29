@@ -47,6 +47,8 @@ const RollDice: React.FC<RollDiceProps> = ({ sides }) => {
 
     setTimeout(() => {
       setRolling(false);
+
+      // Calculate score of each player
       const total = sides.indexOf(newDie1) + sides.indexOf(newDie2) + 2;
       if (currentPlayer === 1) {
         setPlayer1Score(player1Score + total);
@@ -73,6 +75,7 @@ const RollDice: React.FC<RollDiceProps> = ({ sides }) => {
   };
 
   const resetGame = () => {
+    // reset the game: score and turn for each player
     setDie1("one");
     setDie2("one");
     setRolling(false);
